@@ -1,1 +1,24 @@
+ion-tab-bar {
+  --background: linear-gradient(90deg, #0F3057, #00334E);
+  --border: none;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
 
+ion-tab-button {
+  --color: #b0c4d9;
+  --color-selected: #F28705;
+}
+
+ion-icon {
+  color: inherit;
+}
+
+ion-label {
+  font-weight: 600;
+  color: inherit;
+}
+
+ion-tab-button.tab-selected {
+  background: rgba(242, 135, 5, 0.1);
+  border-radius: 8px;
+}

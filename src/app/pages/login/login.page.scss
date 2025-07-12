@@ -1,0 +1,64 @@
+ion-toolbar {
+  --background: linear-gradient(90deg, #0F3057, #00587A);
+  --color: white;
+}
+
+ion-content {
+  --background: #F2F2F2;
+}
+
+ion-item {
+  --background: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.form-input {
+  max-width: 320px;
+  margin: 0 auto 10px auto;
+}
+
+ion-label {
+  color: #0F3057 !important;
+  font-weight: 600;
+}
+
+ion-input {
+  color: #0F3057 !important;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.site-name {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0F3057;
+  margin-top: 10px;
+}
+
+ion-button {
+  --background: #F28705;
+  --color: white;
+  border-radius: 10px;
+}
+
+.form-buttons {
+  max-width: 320px;
+  margin: 20px auto 0 auto;
+}
+
+#logo_loguin {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.password-toggle-icon {
+  font-size: 22px;
+  color: #0F3057;
+  cursor: pointer;
+  padding: 4px;
+}

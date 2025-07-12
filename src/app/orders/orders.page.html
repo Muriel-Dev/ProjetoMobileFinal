@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="text-align: center;">
+      <div style="margin-top: 15px; margin-bottom: 7px;">
+        <img src="../../../assets/images/site.jpg" alt="Logo" class="logo" style="width: 45px; height: 45px; border-radius: 4px;">
+        <ion-title style="font-size: 30px;">Aster Store</ion-title>
+      </div>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" title="Sair">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="margin-bottom: 10px; font-size: 25px;">Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let pedido of pedidos">
+    <ion-card-header>
+      <ion-card-title>Pedido - {{ pedido.data | date:'dd/MM/yyyy HH:mm' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Produtos:</strong></p>
+      <ul>
+        <li *ngFor="let p of pedido.produtos">
+          {{ p.quantidade }}x {{ p.descricao }} - R$ {{ (p.quantidade * p.desconto) | number:'1.2-2' }}
+          <img [src]="'../../../assets/images/produtos/' + p.codigo + '.jpg'" alt="{{ p.descricao }}" style="width: 80px; height: auto; border-radius: 4px; display: block; margin-bottom: 5px;">
+          <br>
+        </li>
+      </ul>
+      <p>Total: R$ {{ pedido.total | number:'1.2-2' }}</p>
+      <p>Frete: R$ {{ pedido.frete | number:'1.2-2' }}</p>
+      <h3>Final: R$ {{ pedido.final | number:'1.2-2' }}</h3>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

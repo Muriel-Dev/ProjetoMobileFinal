@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Bem-vindo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="splash-container">
+    <!-- Logo ou nome do app -->
+    <div class="logo-section">
+      <h1>Meu App</h1>
+      <p>Sua loja online</p>
+    </div>
+
+    <!-- Botões de Login e Cadastro -->
+    <div class="buttons-section" *ngIf="showButtons">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button 
+              expand="block" 
+              fill="solid" 
+              color="primary"
+              (click)="goToLogin()">
+              Entrar
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col size="12">
+            <ion-button 
+              expand="block" 
+              fill="outline" 
+              color="primary"
+              (click)="goToRegister()">
+              Criar Conta
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <!-- Loading enquanto não mostra os botões -->
+    <div class="loading-section" *ngIf="!showButtons">
+      <p>Carregando...</p>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      {{ isEditMode ? 'Editar Dados' : 'Cadastro de Cliente' }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="form-container">
+    <ion-item class="form-input">
+      <ion-label position="floating">Nome Completo</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input [(ngModel)]="telefone"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">Endereço</ion-label>
+      <ion-input [(ngModel)]="endereco"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">Bairro</ion-label>
+      <ion-input [(ngModel)]="bairro"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">CEP</ion-label>
+      <ion-input [(ngModel)]="cep"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">Cidade</ion-label>
+      <ion-input [(ngModel)]="cidade"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">Estado</ion-label>
+      <ion-input [(ngModel)]="estado"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="email" type="email"></ion-input>
+    </ion-item>
+
+    <ion-item class="form-input">
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input
+        [type]="showPassword ? 'text' : 'password'"
+        [(ngModel)]="password">
+      </ion-input>
+      <ion-icon
+        slot="end"
+        [name]="showPassword ? 'eye-off' : 'eye'"
+        (click)="togglePasswordVisibility()"
+        class="password-toggle-icon">
+      </ion-icon>
+    </ion-item>
+
+    <div class="form-buttons">
+      <ion-button expand="block" (click)="register()">
+        {{ isEditMode ? 'Atualizar Dados' : 'Cadastrar' }}
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

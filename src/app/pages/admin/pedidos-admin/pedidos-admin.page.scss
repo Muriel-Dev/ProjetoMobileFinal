@@ -1,0 +1,200 @@
+/* Toolbar com gradiente aprimorado */
+ion-toolbar {
+  --background: linear-gradient(135deg, #0F3057 0%, #00334E 70%, #001a2e 100%);
+  --color: white;
+  box-shadow: 0 2px 8px rgba(15, 48, 87, 0.3);
+}
+
+/* Título da toolbar */
+ion-title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Botão de logout */
+ion-buttons ion-button {
+  --background: transparent;
+  --color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+ion-buttons ion-button:hover {
+  --color: #F28705;
+  transform: scale(1.05);
+}
+
+/* Conteúdo principal */
+ion-content {
+  --background: linear-gradient(180deg, #F2F2F2 0%, #E8E8E8 100%);
+}
+
+/* Container principal dos pedidos */
+.pedidos {
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  --background: transparent;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .pedidos {
+    margin: 10px;
+    padding: 0 10px;
+  }
+}
+
+/* Items dos pedidos */
+ion-item {
+  --background: #1a1a1a;
+  --color: white;
+  --border-color: #333;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+ion-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Labels dos pedidos */
+ion-label h2 {
+  color: #F28705;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+ion-label p {
+  color: #b3b3b3;
+  font-size: 14px;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+/* Botões de ação */
+ion-button {
+  --background: linear-gradient(45deg, #F28705, #ff9500);
+  --color: white;
+  --border-radius: 8px;
+  --padding-top: 8px;
+  --padding-bottom: 8px;
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(242, 135, 5, 0.3);
+}
+
+ion-button:hover {
+  --background: linear-gradient(45deg, #ff9500, #F28705);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(242, 135, 5, 0.4);
+}
+
+/* Área de detalhes dos produtos */
+.ion-padding-start {
+  --background: #262626;
+  margin: 0 20px 20px 40px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #F28705;
+}
+
+/* Header da lista de produtos */
+ion-list-header {
+  color: #F28705;
+  font-weight: 600;
+  font-size: 16px;
+  background: transparent;
+  padding: 16px 20px 8px 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Items dos produtos */
+.ion-padding-start ion-item {
+  --background: #2a2a2a;
+  --color: #e0e0e0;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ion-padding-start ion-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Texto quando não há pedidos */
+ion-text {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Cards (caso sejam usados) */
+ion-card {
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border: 1px solid #333;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+ion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+ion-card-title {
+  color: #F28705;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* Melhorias gerais de tipografia */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Animações suaves */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Estados de foco para acessibilidade */
+ion-button:focus,
+ion-item:focus {
+  outline: 2px solid #F28705;
+  outline-offset: 2px;
+}

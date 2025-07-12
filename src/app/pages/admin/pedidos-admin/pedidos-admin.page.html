@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pedidos - Todos os Clientes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" title="Sair">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="pedidos" *ngIf="pedidos.length > 0; else semPedidos">
+    <ng-container *ngFor="let pedido of pedidos">
+      <ion-item>
+        <ion-label>
+          <h2>Pedido de: {{ pedido.clienteEmail }}</h2>
+          <p>Data: {{ pedido.data | date: 'dd/MM/yyyy HH:mm' }}</p>
+          <p>Total final: R$ {{ pedido.final | number: '1.2-2' }}</p>
+        </ion-label>
+        <ion-button fill="clear" (click)="toggleDetails(pedido)">
+          {{ pedido.showDetails ? 'Esconder detalhes' : 'Ver detalhes' }}
+        </ion-button>
+      </ion-item>
+
+      <ion-list *ngIf="pedido.showDetails" class="ion-padding-start">
+        <ion-list-header>Produtos</ion-list-header>
+        <ion-item *ngFor="let p of pedido.produtos">
+          {{ p.quantidade }}x {{ p.descricao }} -
+          R$ {{ (p.quantidade * p.desconto) | number: '1.2-2' }}
+        </ion-item>
+      </ion-list>
+    </ng-container>
+  </ion-list>
+
+  <ng-template #semPedidos>
+    <ion-text color="medium" class="ion-padding">
+      Nenhum pedido encontrado.
+    </ion-text>
+  </ng-template>
+</ion-content>

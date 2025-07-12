@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/products"></ion-back-button>
+    </ion-buttons>
+    <div style="display: flex; align-items: center;">
+      <img src="../../../assets/images/site.jpg" alt="Logo" class="logo" style="width: 25px; height: 25px; border-radius: 4px; margin-left: 10px;">
+      <ion-title>Aster Store</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="produto">
+  <ion-card>
+    <ion-card-content>
+      <br />
+      <h1><strong>{{ produto.descricao }}</strong></h1>
+      <img [src]="'../../../assets/images/produtos/' + produto.codigo + '.jpg'" alt="{{ produto.descricao }}" style="width: 210px; border-radius: 8px; margin-top: 10px;"/>
+      <br />
+      <h2><strong>De <s> R$ {{ produto.valor | number:'1.2-2' }}</s></strong></h2>
+      <h2><strong>Por R$ {{ produto.desconto | number:'1.2-2' }}</strong></h2>
+      <br />
+      <p>Descrição: {{ produto.detalhes }}</p>
+      <br />
+
+      <div class="quantidade-container">
+        <label class="quantidade-label">Quantidade:</label>
+        <div class="quantidade-input-wrapper">
+          <button type="button" (click)="decrementar()">–</button>
+          <input
+            type="number"
+            min="1"
+            [(ngModel)]="quantidade"
+            required
+            class="quantidade-input"
+          />
+          <button type="button" (click)="incrementar()">+</button>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <ion-button expand="full" (click)="comprar()">Adicionar produto ao carrinho</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

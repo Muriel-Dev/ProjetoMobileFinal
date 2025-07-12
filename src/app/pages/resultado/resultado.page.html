@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Resultado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br><br><br><br><br>
+  <ion-card>
+    <ion-card-content>
+      <h1 style="text-align: center;"><strong>Parabéns {{ primeiroNome || 'cliente' }}!</strong></h1>
+      <h2 style="text-align: center;">✅ Compra realizada com sucesso!</h2>
+      <br>
+      <p>Total dos produtos: R$ {{ total | number:'1.2-2'}}</p>
+      <p>Frete: R$ {{ frete | number:'1.2-2'}}</p>
+      <h2><strong>Valor Final: R$ {{ final | number:'1.2-2'}}</strong></h2>
+      <br>
+
+      <ion-button expand="full" (click)="voltar()">Voltar à Página Inicial</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

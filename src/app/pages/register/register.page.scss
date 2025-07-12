@@ -1,0 +1,59 @@
+ion-toolbar {
+  --background: linear-gradient(90deg, #0F3057, #00334E);
+  --color: white;
+}
+
+ion-content {
+  --background: #F2F2F2;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+ion-item {
+  --background: white;
+  border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --inner-padding-top: 8px;
+  --inner-padding-bottom: 8px;
+  --min-height: 56px;
+}
+
+.form-input {
+  width: 100%;
+}
+
+ion-label {
+  color: #0F3057 !important;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+ion-input {
+  color: #0F3057 !important;
+  font-size: 15px;
+}
+
+ion-button {
+  --background: #F28705;
+  --color: white;
+  border-radius: 10px;
+}
+
+.form-buttons {
+  margin-top: 20px;
+}
+
+.password-toggle-icon {
+  font-size: 22px;
+  color: #0F3057;
+  cursor: pointer;
+  padding: 4px;
+}

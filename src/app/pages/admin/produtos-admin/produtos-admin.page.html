@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="text-align: center;">
+      <div style="margin-top: 15px; margin-bottom: 7px;">
+        <img src="../../../assets/images/site.jpg" alt="Logo" class="logo" style="width: 45px; height: 45px; border-radius: 4px;">
+        <ion-title style="font-size: 30px;">Aster Store</ion-title>
+      </div>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" title="Sair">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title style="margin-bottom: 7px; font-size: 23px;">Administração de Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <div class='container1'>
+      <h2>Adicionar Novo Produto</h2>
+
+      <ion-item>
+        <ion-label position="floating">Nome:</ion-label>
+        <ion-input [(ngModel)]="novoProduto.descricao"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Valor Inicial:</ion-label>
+        <ion-input [(ngModel)]="novoProduto.valor" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Valor Final com Desconto:</ion-label>
+        <ion-input [(ngModel)]="novoProduto.desconto" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Descrição:</ion-label>
+        <ion-input [(ngModel)]="novoProduto.detalhes"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="adicionarProduto()">Adicionar Produto</ion-button>
+    </div>
+
+    <div class='container2'>
+      <h2>Produtos Cadastrados</h2>
+      <ion-list>
+        <ion-item *ngFor="let p of produtos; let i = index">
+          <ion-label>{{ p.codigo }} - {{ p.descricao }} (R$ {{ p.valor }} → {{ p.desconto }})</ion-label>
+          <ion-button fill="clear" color="danger" (click)="removerProduto(i)">Excluir</ion-button>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="full" color="success" (click)="salvarEdicoes()">Salvar Alterações</ion-button>
+    </div>
+  </div>
+
+</ion-content>
+
+

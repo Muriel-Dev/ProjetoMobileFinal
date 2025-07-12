@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="text-align: center;">
+      <div style="margin-top: 15px; margin-bottom: 7px;">
+        <img src="../../../assets/images/site.jpg" alt="Logo" class="logo" style="width: 45px; height: 45px; border-radius: 4px;">
+        <ion-title style="font-size: 30px;">Aster Store</ion-title>
+      </div>
+    </div>
+    <ion-title style="margin-bottom: 10px; font-size: 25px;">Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="busca-filtro-container-horizontal">
+    <ion-searchbar
+      [(ngModel)]="buscaTexto"
+      (ionInput)="filtrarProdutos()"
+      placeholder="Buscar produto pelo nome"
+      debounce="300"
+      class="searchbar"
+    ></ion-searchbar>
+
+    <div class="filtro-preco-container" *ngIf="mostrarFiltros">
+      <div class="filtro-mini">
+        <label for="precoMin">Mín:</label>
+        <input
+          id="precoMin"
+          type="number"
+          [(ngModel)]="precoMin"
+          (input)="filtrarProdutos()"
+          min="0"
+          placeholder="R$ 0"
+        />
+      </div>
+
+      <div class="filtro-mini">
+        <label for="precoMax">Máx:</label>
+        <input
+          id="precoMax"
+          type="number"
+          [(ngModel)]="precoMax"
+          (input)="filtrarProdutos()"
+          min="0"
+          placeholder="R$ 1000"
+        />
+      </div>
+    </div>
+
+    <button
+      class="filtro-toggle-button"
+      (click)="mostrarFiltros = !mostrarFiltros"
+      type="button"
+    >
+      {{ mostrarFiltros ? 'Esconder filtros' : 'Adicionar Filtros' }}
+    </button>
+  </div>
+
+  <div class="produtos-grid" *ngIf="produtosFiltrados.length > 0">
+    <div class="produto-card" *ngFor="let produto of produtosFiltrados" (click)="verProduto(produto.codigo)">
+      <img
+        [src]="'../../../assets/images/produtos/' + produto.codigo + '.jpg'"
+        alt="{{ produto.descricao }}"
+        class="produto-imagem" />
+      <h1>{{ produto.descricao }}</h1>
+      <p style="font-size: 1.2rem;">De <s>R$ {{ produto.valor | number:'1.2-2'}}</s></p>
+      <p style="font-size: 1.2rem;">Por <strong>R$ {{ produto.desconto | number:'1.2-2'}}</strong></p>
+    </div>
+  </div>
+
+  <div *ngIf="produtosFiltrados.length === 0" class="sem-produtos-mensagem">
+    Não existem produtos com esse nome ou filtro aplicado.
+  </div>
+</ion-content>
+

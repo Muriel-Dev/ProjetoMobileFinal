@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil do Administrador</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" title="Sair">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="centralizar">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input [(ngModel)]="admin.nome" [readonly]="!editando"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input [(ngModel)]="admin.email" [readonly]="!editando" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Telefone</ion-label>
+        <ion-input [(ngModel)]="admin.telefone" [readonly]="!editando" type="tel"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Endereço</ion-label>
+        <ion-input [(ngModel)]="admin.endereco" [readonly]="!editando"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Bairro</ion-label>
+        <ion-input [(ngModel)]="admin.bairro" [readonly]="!editando"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">CEP</ion-label>
+        <ion-input [(ngModel)]="admin.cep" [readonly]="!editando"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Cidade</ion-label>
+        <ion-input [(ngModel)]="admin.cidade" [readonly]="!editando"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Estado</ion-label>
+        <ion-input [(ngModel)]="admin.estado" [readonly]="!editando"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button *ngIf="!editando" expand="full" (click)="editar()">Editar Dados</ion-button>
+    <ion-button *ngIf="editando" expand="full" color="success" (click)="salvar()">Salvar</ion-button>
+  </div>
+</ion-content>

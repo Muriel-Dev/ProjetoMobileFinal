@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Área de Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="header-section ion-text-center ion-margin-bottom" id="logo_loguin">
+    <img src="../../../assets/images/site.jpg" alt="Logo" class="logo">
+    <h1 class="site-name">Aster Store</h1>
+  </div>
+
+  <ion-item class="form-input">
+    <ion-label position="floating">Email</ion-label>
+    <ion-input [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item class="form-input">
+    <ion-label position="floating">Senha</ion-label>
+    <ion-input
+      [type]="showPassword ? 'text' : 'password'"
+      [(ngModel)]="password">
+    </ion-input>
+    <ion-icon
+      slot="end"
+      [name]="showPassword ? 'eye-off' : 'eye'"
+      (click)="togglePasswordVisibility()"
+      class="password-toggle-icon">
+    </ion-icon>
+  </ion-item>
+
+  <div class="form-buttons">
+    <ion-button expand="block" (click)="login()">Entrar</ion-button>
+    <ion-button expand="block" fill="clear" (click)="goToRegister()">Criar Conta</ion-button>
+  </div>
+</ion-content>

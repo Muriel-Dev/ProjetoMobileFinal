@@ -1,0 +1,45 @@
+ion-toolbar {
+  --background: linear-gradient(90deg, #0F3057, #00334E);
+  --color: white;
+}
+
+ion-content {
+  --background: #F2F2F2;
+}
+
+ion-card {
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+ion-item {
+  --background: white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+:host {
+  ion-item ion-label {
+    font-weight: 600;
+    color: #000 !important;
+  }
+
+  ion-item ion-label p {
+    color: #000 !important;
+  }
+}
+
+ion-button {
+  --background: #F28705;
+  --color: white;
+  border-radius: 10px;
+}
+
+p {
+  font-size: 15px;
+}
+
+h2 {
+  color: #0F3057;
+}

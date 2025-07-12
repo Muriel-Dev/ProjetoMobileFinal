@@ -1,0 +1,35 @@
+ion-toolbar {
+  --background: linear-gradient(90deg, #0F3057, #002639);
+  --color: white;
+}
+
+ion-content {
+  --background: #F2F2F2;
+}
+
+ion-card {
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+h1, h2 {
+  color: #0F3057;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  color: #444;
+}
+
+ion-button {
+  --background: #F28705;
+  --color: white;
+  border-radius: 10px;
+}
+
+ion-card {
+  max-width: 320px;
+  margin: 0 auto 10px auto;
+}
